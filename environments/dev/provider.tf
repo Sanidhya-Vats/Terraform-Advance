@@ -14,7 +14,6 @@ terraform {
   #     storage_account_name = "randomsto"                              # Can be passed via `-backend-config=`"storage_account_name=<storage account name>"` in the `init` command.
   #     container_name       = "terenamm"                               # Can be passed via `-backend-config=`"container_name=<container name>"` in the `init` command.
   #     key                  = "terraform.tfstate"                # Can be passed via `-backend-config=`"key=<blob key name>"` in the `init` command.
-
   #   }
 
 }
@@ -27,10 +26,10 @@ provider "azurerm" {
       recover_soft_deleted_key_vaults = true
     }
   }
-  subscription_id = "afd16d4c-a9a7-4226-a637-b843d1e25f1e"
+  subscription_id = "8d22e716-6dc1-4fa1-822a-3cfaa4acfba0"
 }
 
 provider "random" {
- 
+
 }
 

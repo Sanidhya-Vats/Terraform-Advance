@@ -1,17 +1,9 @@
 
 dev-rgs = {
-  rg1 = {
-    name     = "Mahendra"
-    location = "westeurope"
-  }
-  rg2 = {
-    name     = "Vats"
-    location = "westeurope"
-    tags     = { environment = "dev" }
-  }
+
   rg3 = {
     name     = "Sanidhya1"
-    location = "westeurope"
+    location = "Brazil South"
     tags     = { environment = "dev" }
   }
 
@@ -22,7 +14,7 @@ dev-stgs = {
   stg1 = {
     name                     = "sanidhyastoragevats"
     resource_group_name      = "Sanidhya1"
-    location                 = "westeurope"
+    location                 = "Brazil South"
     account_replication_type = "LRS"
     account_tier             = "Standard"
 
@@ -30,7 +22,7 @@ dev-stgs = {
   stg2 = {
     name                     = "sanidhyastoragevats1"
     resource_group_name      = "vats"
-    location                 = "westeurope"
+    location                 = "Brazil South"
     account_replication_type = "LRS"
     account_tier             = "Standard"
 
@@ -52,7 +44,7 @@ dev-cons = {
 dev-vnets = {
   vnet1 = {
     name                = "vnet"
-    location            = "Japan East"
+    location            = "Brazil South"
     resource_group_name = "Sanidhya1"
     address_space       = ["10.0.0.0/24"]
     dns_servers         = ["10.0.0.4", "10.0.0.5"]
@@ -74,103 +66,105 @@ dev-vnets = {
     } }
 
   }
-  vnet2 = {
-    name                = "vnet1"
-    location            = "Japan East"
-    resource_group_name = "Sanidhya1"
-    address_space       = ["10.0.1.0/24"]
-    dns_servers         = ["10.0.0.4", "10.0.0.5"]
-    subnets = {
-      subnet1 = {
+  # vnet2 = {
+  #   name                = "vnet1"
+  #   location            = "Brazil South"
+  #   resource_group_name = "Sanidhya1"
+  #   address_space       = ["10.0.1.0/24"]
+  #   dns_servers         = ["10.0.0.4", "10.0.0.5"]
+  #   subnets = {
+  #     subnet1 = {
 
-        name             = "floor1"
-        address_prefixes = ["10.0.1.0/28"]
-      }
-      subnet2 = {
+  #       name             = "floor1"
+  #       address_prefixes = ["10.0.1.0/28"]
+  #     }
+  #     subnet2 = {
 
-        name             = "floor2"
-        address_prefixes = ["10.0.1.16/28"]
-      }
-      subnet3 = {
+  #       name             = "floor2"
+  #       address_prefixes = ["10.0.1.16/28"]
+  #     }
+  #     subnet3 = {
 
-        name             = "floor3"
-        address_prefixes = ["10.0.1.32/27"]
-    } }
+  #       name             = "floor3"
+  #       address_prefixes = ["10.0.1.32/27"]
+  #   } }
 
-  }
-}
-
-
-dev-win-vms = {
-  vm1 = {
-    vm_name                       = "Sanidhyavm"
-    resource_group_name           = "Sanidhya1"
-    location                      = "Japan East"
-    size                          = "Standard_F2"
-    # admin_username                = "sanidhya"
-    # admin_password                = "Sanidhya@123"
-    caching                       = "ReadWrite"
-    storage_account_type          = "Standard_LRS"
-    publisher                     = "MicrosoftWindowsServer"
-    offer                         = "WindowsServer"
-    sku                           = "2016-Datacenter"
-    version                       = "latest"
-    private_ip_address_allocation = "Dynamic"
-    subnet_name                   = "floor1"
-    virtual_network_name          = "vnet"
-    allocation_method             = "Static"
-    nsg_name                      = "Sanidhyavm-nsg"
-    asgs_name                     = "AppWeb"
-    kv_name="SanidhyaKeyvault"
-  }
-   vm2={
-    vm_name= "Sanidhyavm1"
-    resource_group_name="Sanidhya1"
-    location="Japan East"
-    size="Standard_B1s"
-    admin_username="sanidhya"
-    admin_password="Sanidhya@123"
-    caching="ReadWrite"
-    storage_account_type="Standard_LRS"
-    publisher= "MicrosoftWindowsServer"
-    offer= "WindowsServer"
-    sku="2016-Datacenter"
-    version= "latest"
-    private_ip_address_allocation="Dynamic"
-    subnet_name="floor1"
-     virtual_network_name= "vnet"
-     allocation_method="Static"
-     nsg_name="Sanidhyavm-nsg"
-     asgs_name="AppWeb"
-     kv_name="SanidhyaKeyvault"
-  }
-  # vm3={
-  #   vm_name= "Sanidhyavm2"
-  #   resource_group_name="Sanidhya1"
-  #   location="Japan East"
-  #   size="Standard_B1s"
-  #   admin_username="sanidhya"
-  #   admin_password="Sanidhya@123"
-  #   caching="ReadWrite"
-  #   storage_account_type="Standard_LRS"
-  #   publisher= "MicrosoftWindowsServer"
-  #   offer= "WindowsServer"
-  #   sku="2016-Datacenter"
-  #   version= "latest"
-  #   private_ip_address_allocation="Dynamic"
-  #   subnet_name="floor2"
-  #    virtual_network_name= "vnet"
-  #    allocation_method="Static"
-  #    nsg_name="Sanidhyavm-nsg"
-  #    asgs_name="AppLogic"
   # }
 }
+
+
+# dev-win-vms = {
+#   vm1 = {
+#     vm_name             = "Sanidhyavm"
+#     resource_group_name = "Sanidhya1"
+#     location            = "Brazil South"
+#     size                = "Standard_F2"
+#     # admin_username                = "sanidhya"
+#     # admin_password                = "Sanidhya@123"
+#     caching                       = "ReadWrite"
+#     storage_account_type          = "Standard_LRS"
+#     publisher                     = "MicrosoftWindowsServer"
+#     offer                         = "WindowsServer"
+#     sku                           = "2016-Datacenter"
+#     version                       = "latest"
+#     private_ip_address_allocation = "Dynamic"
+#     subnet_name                   = "floor1"
+#     virtual_network_name          = "vnet"
+#     allocation_method             = "Static"
+#     nsg_name                      = "Sanidhyavm-nsg"
+#     asgs_name                     = "AppWeb"
+#     kv_name="SanidhyaKeyvault1"
+#   }
+#   vm2 = {
+#     vm_name                       = "Sanidhyavm1"
+#     resource_group_name           = "Sanidhya1"
+#     location                      = "Brazil South"
+#     size                          = "Standard_B1s"
+#     admin_username                = "sanidhya"
+#     admin_password                = "Sanidhya@123"
+#     caching                       = "ReadWrite"
+#     storage_account_type          = "Standard_LRS"
+#     publisher                     = "MicrosoftWindowsServer"
+#     offer                         = "WindowsServer"
+#     sku                           = "2016-Datacenter"
+#     version                       = "latest"
+#     private_ip_address_allocation = "Dynamic"
+#     subnet_name                   = "floor1"
+#     virtual_network_name          = "vnet"
+#     allocation_method             = "Static"
+#     nsg_name                      = "Sanidhyavm-nsg"
+#     asgs_name                     = "AppWeb"
+#     kv_name="SanidhyaKeyvault1"
+#   }
+
+
+# vm3={
+#   vm_name= "Sanidhyavm2"
+#   resource_group_name="Sanidhya1"
+#   location="Brazil South"
+#   size="Standard_B1s"
+#   admin_username="sanidhya"
+#   admin_password="Sanidhya@123"
+#   caching="ReadWrite"
+#   storage_account_type="Standard_LRS"
+#   publisher= "MicrosoftWindowsServer"
+#   offer= "WindowsServer"
+#   sku="2016-Datacenter"
+#   version= "latest"
+#   private_ip_address_allocation="Dynamic"
+#   subnet_name="floor2"
+#    virtual_network_name= "vnet"
+#    allocation_method="Static"
+#    nsg_name="Sanidhyavm-nsg"
+#    asgs_name="AppLogic"
+# }
+# }
 
 dev-nsgs = {
   nsg1 = {
     name                = "Sanidhyavm-nsg"
     resource_group_name = "Sanidhya1"
-    location            = "Japan East"
+    location            = "Brazil South"
     security_rules = {
       rule1 = {
         name                       = "RDPAllow"
@@ -200,12 +194,12 @@ dev-nsgs = {
 dev-asgs = {
   asgs1 = {
     name                = "AppWeb"
-    location            = "Japan East"
+    location            = "Brazil South"
     resource_group_name = "Sanidhya1"
   }
   asgs2 = {
     name                = "AppLogic"
-    location            = "Japan East"
+    location            = "Brazil South"
     resource_group_name = "Sanidhya1"
   }
 }
@@ -213,26 +207,71 @@ dev-asgs = {
 dev-bastions = {
   bas1 = {
     name                 = "sanidhyabastion"
-    location             = "Japan East"
+    location             = "Brazil South"
     resource_group_name  = "Sanidhya1"
     allocation_method    = "Static"
     pip_sku              = "Standard"
     virtual_network_name = "vnet"
-    virtual_network_id      = false
+    virtual_network_id   = false
   }
 }
 
 dev-keyvaults = {
   kv1 = {
-    name                       = "SanidhyaKeyvault"
-    location                   = "Japan East"
+    name                       = "SanidhyaKeyvault11464"
+    location                   = "Brazil South"
     resource_group_name        = "Sanidhya1"
     soft_delete_retention_days = 7
     purge_protection_enabled   = true
     sku_name                   = "standard"
-    key_permissions            = ["Backup", "Create", "Decrypt", "Delete", "Encrypt", "Get", "Import", "List", "Purge", "Recover", "Restore", "Sign", "UnwrapKey", "Update", "Verify", "WrapKey", "Release", "Rotate", "GetRotationPolicy","SetRotationPolicy"]
-    secret_permissions         = ["Backup", "Delete", "Get", "List", "Purge", "Recover","Restore","Set"]
+    key_permissions            = ["Backup", "Create", "Decrypt", "Delete", "Encrypt", "Get", "Import", "List", "Purge", "Recover", "Restore", "Sign", "UnwrapKey", "Update", "Verify", "WrapKey", "Release", "Rotate", "GetRotationPolicy", "SetRotationPolicy"]
+    secret_permissions         = ["Backup", "Delete", "Get", "List", "Purge", "Recover", "Restore", "Set"]
     storage_permissions        = []
     certificate_permissions    = ["Backup", "Create", "Delete", "DeleteIssuers", "Get", "GetIssuers", "Import", "List", "ListIssuers", "ManageContacts", "ManageIssuers", "Purge", "Recover", "Restore", "SetIssuers", "Update"]
 
 } }
+dev-linux-vms = {
+
+  vm1 = {
+    vm_name             = "Frontendvm"
+    resource_group_name = "Sanidhya1"
+    location            = "Brazil South"
+    size                = "Standard_F2"
+    # admin_username                = "sanidhya"
+    # admin_password                = "Sanidhya@123"
+    caching                       = "ReadWrite"
+    storage_account_type          = "Standard_LRS"
+    publisher                     = "Canonical"
+    offer                         = "0001-com-ubuntu-server-focal"
+    sku                           = "20_04-lts"
+    version                       = "latest"
+    private_ip_address_allocation = "Dynamic"
+    subnet_name                   = "floor1"
+    virtual_network_name          = "vnet"
+    allocation_method             = "Static"
+    nsg_name                      = "Sanidhyavm-nsg"
+    asgs_name                     = "AppWeb"
+    kv_name                       = "SanidhyaKeyvault11464"
+  }
+  vm2 = {
+    vm_name                       = "Backendvm"
+    resource_group_name           = "Sanidhya1"
+    location                      = "Brazil South"
+    size                          = "Standard_F2"
+    admin_username                = "sanidhya"
+    admin_password                = "Sanidhya@123"
+    caching                       = "ReadWrite"
+    storage_account_type          = "Standard_LRS"
+    publisher                     = "Canonical"
+    offer                         = "0001-com-ubuntu-server-focal"
+    sku                           = "20_04-lts"
+    version                       = "latest"
+    private_ip_address_allocation = "Dynamic"
+    subnet_name                   = "floor1"
+    virtual_network_name          = "vnet"
+    allocation_method             = "Static"
+    nsg_name                      = "Sanidhyavm-nsg"
+    asgs_name                     = "AppWeb"
+    kv_name                       = "SanidhyaKeyvault11464"
+  }
+}
